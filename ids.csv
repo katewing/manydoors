@@ -1,0 +1,16 @@
+# This file contains the card IDs that are allowed to trigger the RFID reader
+# along with the name of the card holder. Lines that begin with a # are ignored.
+# Do not include the 000 at the beginning of the card number
+# Card ID, Name
+8905409, Elliott
+8867067, Jean
+6231045, Lis
+1946775, Angela
+6001634, Ken
+4821422, Peter
+1965576, David
+4817360, Mac
+1972574, Dav
+7139500, Ethan
+8901580, Jorrit
+8842421, Ariel
