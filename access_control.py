@@ -53,8 +53,6 @@ def watchForReport( port ):
         elif data is not '':
             reportString += data
 
-
-
 def processId( port, cardId, direction ):
     name =  findNameForId( cardId )
     if name:
@@ -69,7 +67,7 @@ def processId( port, cardId, direction ):
         slackParams = { 
 	   'token' : 'xoxp-4031269372-4894232517-19749775430-08f5b4ab7f',
 	   'channel' : '#door',
-	   'text' : name + ' showed up',
+	   'text' : direction + ' ' + name,
 	   'username' : 'doorbot'
         }
         urllib2.urlopen('https://slack.com/api/chat.postMessage?' + urllib.urlencode(slackParams))
