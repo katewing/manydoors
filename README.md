@@ -1,11 +1,11 @@
 # manydoors
 access script for manylabs door
 
-use rfid to trigger actions at the manylabs door.
-
-update ids in the github repo when new ones are available
-
-raspberry pi setup sync github repo every minute to keep ids up to date.
+features:
+1. use rfid to record entry/exit at the manylabs door.
+2. automatically updates ids from this github repo when new ones are available
+3. keeps a local event log on the pi
+4. posts a enter/exit events on the #door channel of manylabs slack
 
 # setup
 
