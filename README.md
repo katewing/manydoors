@@ -14,6 +14,5 @@ raspberry pi setup sync github repo every minute to keep ids up to date.
 3. create symlink to start service ```sudo ln -s /home/pi/rfid/access_control/access_control.conf /etc/init/access_control.conf```
 4. restart service using ```sudo service access_control restart```
 5. edit crontab for synching github repo ```crontab -e```
-6. add ```* * * * * cd /home/pi/rfid/access_control && git pull --rebase
-```
+6. add ```* * * * * cd /home/pi/rfid/access_control && git pull --rebase```
 
