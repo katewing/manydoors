@@ -10,9 +10,13 @@ import serial
 import time
 import urllib
 import urllib2
+import logging
 from datetime import datetime
 
 DEBUG = True # Set to True to print info to std out
+
+logger = logging.getLogger(__name__)
+logger.setLevel(logging.INFO)
 
 SERIAL_PORT = "/dev/ttyACM0"
 
@@ -64,14 +68,15 @@ def processId( port, cardId, direction ):
         port.write('\x02allowed\x03')
 
         # Let slack know
+        logger.info('slack posting in progress...')
         slackParams = { 
-	   'token' : 'xoxp-4031269372-4894232517-19749775430-08f5b4ab7f',
-	   'channel' : '#door',
-	   'text' : direction + ' ' + name,
-	   'username' : 'doorbot'
+	        'token' : 'xoxp-4031269372-4894232517-19749775430-08f5b4ab7f',
+	        'channel' : '#door',
+	        'text' : direction + ' ' + name,
+	        'username' : 'doorbot'
         }
         urllib2.urlopen('https://slack.com/api/chat.postMessage?' + urllib.urlencode(slackParams))
-
+        logger.info('slack posting done.')
     else:
 
         # Record failure
