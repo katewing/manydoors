@@ -13,8 +13,6 @@ import urllib2
 import logging
 from datetime import datetime
 
-DEBUG = True # Set to True to print info to std out
-
 LOG_FILENAME = "/home/pi/rfid/access_control/access_control.log"
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.INFO)
@@ -29,8 +27,7 @@ accessLog = "/home/pi/rfid/access_control/accessLog.csv"
 def watchForReport( port ):
     reportString = ''
 
-    if DEBUG:
-        print "Ready"
+    logger.info("Ready")
 
     # Start read loop
     while True:
@@ -44,13 +41,11 @@ def watchForReport( port ):
             # Reset
             reportString = ''
         elif data == '\x03':
-            if DEBUG:
-                print "Checking ID -", # Comma because we don't want a newline
+            logger.info("Checking ID -"), # Comma because we don't want a newline
 
             direction, cardId = reportString.split(":")
 
-            if DEBUG:
-                print "ID: %s" % cardId
+            logger.info("ID: %s" % cardId)
 
             # Reset
             reportString = ''
@@ -118,8 +113,7 @@ def recordAccess(cardId="", direction="", name="", detail=""):
         # Timestamp, CardId, Direction, Name, Detail
         line = "%s, %s, %s, %s, %s\n" % ( str(datetime.now()), cardId, direction, name, detail )
 
-        if DEBUG:
-            print line
+        logger.info(line)
 
         f.write( line )
         f.flush()
@@ -127,7 +121,7 @@ def recordAccess(cardId="", direction="", name="", detail=""):
 
 def sigterm_handler(_signo, _stack_frame):
     "When sysvinit sends the TERM signal, cleanup before exiting."
-    print("[" + datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S') + "] received signal {}, exiting...".format(_signo))
+    logger.info("[" + datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S') + "] received signal {}, exiting...".format(_signo))
 
     sys.exit(0)
 
@@ -140,7 +134,7 @@ if __name__ == "__main__":
             port = serial.Serial( SERIAL_PORT, baudrate=9600, timeout=0 )
             portOpen = True
         except serial.SerialException as e:
-            print "Could not open serial port. Trying again in 5 seconds."
+            logger.info("Could not open serial port. Trying again in 5 seconds.")
             portOpen = False
             time.sleep(5)
 
@@ -150,4 +144,4 @@ if __name__ == "__main__":
     except KeyboardInterrupt as e:
         pass
     except serial.SerialException as e:
-        print "Serial port disconnected. Quitting."
+        logging.info("Serial port disconnected. Quitting.")
