@@ -18,6 +18,8 @@ LOG_FILENAME = "/home/pi/rfid/access_control/access_control.log"
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.INFO)
 handler = logging.handlers.TimedRotatingFileHandler(LOG_FILENAME, when="midnight", backupCount=3)
+formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+handler.setFormatter(formatter)
 logger.addHandler(handler)
 
 SERIAL_PORT = "/dev/ttyACM0"
