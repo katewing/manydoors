@@ -15,8 +15,11 @@ from datetime import datetime
 
 DEBUG = True # Set to True to print info to std out
 
+LOG_FILENAME = "/home/pi/rfid/access_control/access_control.log"
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.INFO)
+handler = logging.handlers.TimedRotatingFileHandler(LOG_FILENAME, when="midnight", backupCount=3)
+logger.addHandler(handler)
 
 SERIAL_PORT = "/dev/ttyACM0"
 
