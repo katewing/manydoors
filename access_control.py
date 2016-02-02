@@ -75,7 +75,13 @@ def processId( port, cardId, direction ):
 	        'text' : direction + ' ' + name,
 	        'username' : 'doorbot'
         }
-        urllib2.urlopen('https://slack.com/api/chat.postMessage?' + urllib.urlencode(slackParams))
+        try:
+          urllib2.urlopen('https://slack.com/api/chat.postMessage?' + urllib.urlencode(slackParams), timeout=5)
+        except urllib2.URLError, e:
+          logger.error("error sending to slack")
+        except socket.timeout, e:
+          logger.error("timeout sending to slack")
+
         logger.info('slack posting done.')
     else:
 
