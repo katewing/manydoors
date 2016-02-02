@@ -11,6 +11,7 @@ import time
 import urllib
 import urllib2
 import logging
+import logging.handlers
 from datetime import datetime
 
 LOG_FILENAME = "/home/pi/rfid/access_control/access_control.log"
