@@ -4,7 +4,7 @@ purpose: tap-in, tap-out with a ISO 14443A keyfob/card to document workspace usa
 ## usage
 1. get a keyfob or keycard (if you have one already, you can use it)
 2. add your rfid number and name/alias to https://github.com/jhpoelen/manydoors/blob/master/ids.csv 
-3. help document space usage by making door buzz when entering and leaving
+3. help document space usage by making door buzz when entering and leaving by tapping on the inside/outside facing coils on the door.
 
 ## features
 
