@@ -1,7 +1,7 @@
-# This file contains the card IDs that are allowed to trigger the RFID reader
+# This file contains the card ID numbers allowed to trigger the RFID reader
 # along with the name of the card holder. Lines that begin with a # are ignored.
-# Do not include the 000 at the beginning of the card number
-# Card ID, Name
+# No need to include leading zeros at the beginning of the number, stripped
+# LINE FORMAT: Card ID number, Name
 8905409, Elliott
 8867067, Jean
 6231045, Lis
@@ -15,6 +15,6 @@
 8901580, Jorrit
 8842421, Ariel
 5037230, Chris
-0004417564, Jonathan
+4417564, Jonathan
 4512951, Adam
 8615552, Sherry
