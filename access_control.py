@@ -100,8 +100,7 @@ def findNameForId( decodedId ):
             if line and not line.startswith( "#" ):
 
                 # Separate values
-                cardId, name = [v.strip() for v in line.split( "," )]
-
+                cardId, name = [v.strip().lstrip("0") for v in line.split( "," )]
                 # Make sure to compare strings
                 if cardId == str(decodedId):
                     return name
