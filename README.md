@@ -1,10 +1,13 @@
 # manydoors doorbot
-purpose: tap-in, tap-out with a ISO 14443A keyfob/card to document workspace usage 
+ManyLabs has a collaborative CoorBot.  No one owns it, we all manage it together, from this page.
 
-## usage
-1. get a keyfob or keycard (if you have one already, you can use it)
-2. add your rfid number and name/alias to https://github.com/jhpoelen/manydoors/blob/master/ids.csv 
-3. help document space usage by making door buzz when entering and leaving by tapping on the inside/outside facing coils on the door.
+Purpose: Record and share tap-in, tap-out actions of members (with a ISO 14443A keyfob/card) and document workspace usage.
+
+## Getting Started
+1. Get a keyfob or keycard (if you have one already, you can use it)
+2. Add your rfid number and name/alias to https://github.com/jhpoelen/manydoors/blob/master/ids.csv (ask for help if this is hard for you)
+3. Tap-in and Tap-out when entering and leaving ManyLabs by placing your keyfob on the inside/outside facing coils on the door.
+4. See your enter/exit actions on the Slack Channel
 
 ## features
 
@@ -13,9 +16,9 @@ purpose: tap-in, tap-out with a ISO 14443A keyfob/card to document workspace usa
 3. keeps a local event log on the pi
 4. posts a enter/exit events on the [#door channel of manylabs slack](https://manylabs.slack.com/archives/door/)
 
-# setup
+# Code setup/ service maintenance
 
-1. login to pi
+1. Login to pi (ask for location and access crededitals on Slack)
 2. clone github repo using ```git clone https://github.com/jhpoelen/manydoors.git access_control```
 3. create symlink to start service ```sudo ln -s /home/pi/rfid/access_control/access_control.conf /etc/init/access_control.conf```
 4. restart service using ```sudo service access_control restart```
