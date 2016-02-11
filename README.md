@@ -1,5 +1,6 @@
-# manydoors doorbot
-ManyLabs has a collaborative DoorBot.  No one owns it, we all manage it together, from this page.
+# Manydoors Doorbot
+
+ManyLabs has a collaborative DoorBot!  No one owns it; we all manage it together, from this page.
 
 Purpose: Record and share tap-in, tap-out actions of members (with a ISO 14443A keyfob/card) and document workspace usage.
 
