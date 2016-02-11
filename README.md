@@ -1,12 +1,17 @@
-# manydoors
-access script for manylabs door
+# manydoors doorbot
+purpose: tap-in, tap-out with a ISO 14443A keyfob/card to document workspace usage 
 
-features:
+## usage
+1. get a keyfob or keycard (if you have one already, you can use it)
+2. add your rfid number and name/alias to https://github.com/jhpoelen/manydoors/blob/master/ids.csv 
+3. help document space usage by making door buzz when entering and leaving
+
+## features
 
 1. use rfid to record entry/exit at the manylabs door.
 2. automatically updates ids from this github repo when new ones are available
 3. keeps a local event log on the pi
-4. posts a enter/exit events on the #door channel of manylabs slack
+4. posts a enter/exit events on the [#door channel of manylabs slack](https://manylabs.slack.com/archives/door/)
 
 # setup
 
