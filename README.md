@@ -1,5 +1,5 @@
 # manydoors doorbot
-ManyLabs has a collaborative CoorBot.  No one owns it, we all manage it together, from this page.
+ManyLabs has a collaborative DoorBot.  No one owns it, we all manage it together, from this page.
 
 Purpose: Record and share tap-in, tap-out actions of members (with a ISO 14443A keyfob/card) and document workspace usage.
 
@@ -18,7 +18,7 @@ Purpose: Record and share tap-in, tap-out actions of members (with a ISO 14443A 
 
 # Code setup/ service maintenance
 
-1. Login to pi (ask for location and access crededitals on Slack)
+1. Login to pi (ask for location and access credentials on Slack)
 2. clone github repo using ```git clone https://github.com/jhpoelen/manydoors.git access_control```
 3. create symlink to start service ```sudo ln -s /home/pi/rfid/access_control/access_control.conf /etc/init/access_control.conf```
 4. restart service using ```sudo service access_control restart```
